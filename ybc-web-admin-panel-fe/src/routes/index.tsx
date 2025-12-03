@@ -1,6 +1,15 @@
+import { lazy, Suspense } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
-import RootLayout from '../pages/RootLayout';
-import Auth from '../pages/auth/AuthPage';
+import Loader from '../common/components/ui/loader/Loader';
+
+const RootLayout = lazy(() => import('../pages/RootLayout'));
+const Dashboard = lazy(() => import('../pages/dashboard/Dashboard'));
+
+const AppSuspense: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <Suspense fallback={<Loader text="Loading..." />}>
+    {children}
+  </Suspense>
+);
 
 const routes = [
   {
@@ -9,21 +18,22 @@ const routes = [
     children: [
       {
         index: true,
-        element: <Navigate to="/auth" replace />
+        element: <Navigate to="/Dashboard" replace />
       },
       {
-        path: 'auth',
-        element: <RootLayout />,
+        path: 'Dashboard',
+        element: (
+          <AppSuspense>
+            <RootLayout />
+          </AppSuspense>
+        ),
         children: [
           {
             index: true,
-            element: <Auth /> 
+            // `Dashboard` is lazy; it will be covered by the same Suspense above
+            element: <Dashboard />
           }
         ]
-      },
-      {
-        path: 'preview',
-        element: <Auth />
       }
     ]
   }
