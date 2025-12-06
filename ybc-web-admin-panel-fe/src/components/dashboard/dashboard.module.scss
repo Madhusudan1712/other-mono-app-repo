@@ -1,0 +1,13 @@
+@use '../../styles/variables.scss' as *;
+
+.dashboardContent {
+  flex: 1 1 auto;
+  height: 100%;
+  width: 100%;
+}
+
+.mainContent {
+  padding: $space-1;
+}
+
+
