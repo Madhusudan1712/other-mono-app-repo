@@ -1,0 +1,143 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  width: 100%;
+}
+
+.leftNavCard {
+  width: 100%;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4) var(--space-3);
+  display: flex;
+  flex-direction: column;
+}
+
+.leftNavTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $color-text-muted;
+  margin-bottom: $space-3;
+}
+
+.leftNavItem {
+  border-radius: 12px;
+  margin-bottom: 4px;
+
+  &, &:hover, &.Mui-selected, &.Mui-selected:hover {
+    background-color: transparent !important;
+  }
+
+  &.Mui-selected {
+    color: $color-primary !important;
+
+    .MuiTypography-root {
+      color: $color-primary !important;
+    }
+
+    .MuiSvgIcon-root {
+      color: $color-primary !important;
+    }
+  }
+}
+
+.leftNavIcon {
+  margin-right: $space-2;
+}
+
+.rightColumn {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.topSection,
+.bottomSection {
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4);
+}
+
+.cardTitle {
+  font-weight: 600;
+  margin-bottom: $space-3;
+}
+
+.profileRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-4;
+}
+
+.profileIdentity {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  min-width: 220px;
+}
+
+.profileField {
+  min-width: 180px;
+}
+
+.workspaceUsersHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $space-3;
+}
+
+.workspaceUsersTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+
+  th,
+  td {
+    padding: 10px 8px;
+    text-align: left;
+    border-bottom: 1px solid $color-border;
+  }
+
+  th {
+    font-weight: 600;
+    color: $color-text-muted;
+  }
+}
+
+@include respond-to(md) {
+  .root {
+    flex-direction: row;
+    align-items: stretch;
+    height: 100%;
+  }
+
+  .leftNavCard {
+    width: 200px;
+    flex: 0 0 200px;
+    height: 100%;
+    min-height: 100%;
+  }
+
+  .profileRow {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+
