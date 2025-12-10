@@ -1,0 +1,67 @@
+@use '../../../styles/variables.scss' as *;
+
+.toolbarRoot {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding-inline: $space-2;
+
+  background-color: var(--color-surface);
+  border-radius: 18px;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+
+.iconButton {
+  background-color: var(--color-bg);
+
+  &:hover {
+    background-color: var(--color-bg-muted);
+  }
+}
+
+.workspaceChip {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  padding-inline: $space-3;
+  padding-block: 6px;
+  background-color: var(--color-bg);
+}
+
+.workspaceIcon {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: $radius-md;
+  background-color: $orange-1;
+  color: $color-primary;
+}
+
+.workspaceMeta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.chevronIcon {
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 900px) {
+  .toolbarRoot {
+    padding-inline: $space-3;
+  }
+}
+
+

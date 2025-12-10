@@ -1,0 +1,86 @@
+@use '../../../../styles/variables.scss' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-2 $space-4;
+  border-radius: $radius-sm;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  color: $color-text;
+  transition:
+    background-color 0.2s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+/* Variants */
+
+.variant-primary {
+  background-color: $color-primary;
+  color: $color-text-light;
+  box-shadow: $shadow-sm;
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-dark;
+    box-shadow: $shadow-md;
+  }
+}
+
+.variant-outline {
+  background-color: transparent;
+  border-color: $color-primary;
+  color: $color-primary;
+
+  &:hover:not(:disabled) {
+    background-color: rgba($color-primary, 0.06);
+  }
+}
+
+.variant-ghost {
+  background-color: transparent;
+  color: $color-primary;
+
+  &:hover:not(:disabled) {
+    background-color: rgba($color-primary, 0.08);
+  }
+}
+
+.variant-soft {
+  background-color: $color-primary-light;
+  color: $color-primary;
+  border-color: transparent;
+
+  &:hover:not(:disabled) {
+    background-color: rgba($color-primary-light, 0.9);
+  }
+}
+
+/* Sizes */
+
+.size-small {
+  padding: $space-1 $space-3;
+  font-size: 0.8125rem;
+}
+
+.size-medium {
+  padding: $space-2 $space-4;
+  font-size: 0.9rem;
+}
+
+.size-large {
+  padding: $space-3 $space-5;
+  font-size: 1rem;
+}
+
+
