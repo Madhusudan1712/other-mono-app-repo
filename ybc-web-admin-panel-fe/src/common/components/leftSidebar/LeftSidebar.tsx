@@ -2,7 +2,6 @@ import { type FC, useState } from 'react';
 import {
   Avatar,
   Box,
-  Divider,
   IconButton,
   List,
   ListItem,

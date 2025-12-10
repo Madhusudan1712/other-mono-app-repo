@@ -29,7 +29,8 @@ const MyAccountSection: FC = () => {
     defaultId: 'profile',
     sections: {
       profile: null,
-      workspace: <WorkspaceUsersSection />
+      workspace: <WorkspaceUsersSection />,
+      brand: null
     }
   });
 

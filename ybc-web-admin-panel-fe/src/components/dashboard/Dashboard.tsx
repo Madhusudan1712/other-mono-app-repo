@@ -6,7 +6,7 @@ import LeftSidebar from '../../common/components/leftSidebar/LeftSidebar';
 import TopToolbar from '../../common/components/topToolbar/TopToolbar';
 import { useSectionRenderer } from '../../common/hook/useSectionRenderer';
 import styles from './dashboard.module.scss';
-import MyAccountSection from '../../sections/myAccountSection/myAccountSection';
+import MyAccountSection from '../../sections/myAccountSection/MyAccountSection';
 
 function Dashboard() {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
